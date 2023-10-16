@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*************** DESIGN SYSTEM ***************/
 :root {
   font-size: 16px;
@@ -5,10 +6,188 @@
   --main__color: #9356DC;
   --main_contrast__color: #FF79DA;
   --check__color: #99E2D0;
-  --bg__color: #F6F6F6;
+  --bg__color: #b3e1f3;
   --bg_contrast__color: #353535;
   --clear__color: #FFFFFF;
+  --bg_shade__color: #EAEAEA;
+  --text__color: #000000;
   /* text */
   --names__font: "Shrikland";
   --body__font: "Roboto";
+}
+
+/********* GLOBAL ******************/
+body {
+  font-family: var(--body__font);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.bouton {
+  background-color: var(--main__color);
+  border-radius: 2rem;
+  color: var(--clear__color);
+  padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+  text-decoration: none;
+  box-shadow: 0rem 0rem 0.5rem var(--main__color);
+  margin-left: auto;
+  margin-right: auto;
+  width: 11rem;
+}
+
+.bouton:hover {
+  background-color: var(--main_contrast__color);
+  box-shadow: 0rem 0rem 0.5rem var(--main_contrast__color);
+}
+
+.colonne {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1.2rem;
+}
+
+.background {
+  background-color: var(--bg__color);
+}
+
+/*************** Homepage - Mobile *******/
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--clear__color);
+  padding: 0.8rem;
+}
+.header__logo {
+  width: 10rem;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--bg_shade__color);
+  padding: 0.8rem;
+}
+.searchbar__icon {
+  margin-right: 0.5rem;
+  margin-left: 2rem;
+}
+.searchbar__entry {
+  border: none;
+  background-color: var(--bg_shade__color);
+}
+
+.promesse {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2.5rem 0 3.5rem 0;
+}
+.promesse p {
+  margin-bottom: 2rem;
+}
+
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0rem;
+  margin: 0;
+}
+.fonctionnement__cadre { /*invisible, contient les deux autres*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.fonctionnement__cadre__icon {
+  background-color: var(--main__color);
+  border-radius: 3rem;
+  padding: 0.3rem 0.7rem;
+  color: var(--clear__color);
+  margin-bottom: 1rem;
+}
+.fonctionnement__cadre__encadré {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--bg__color);
+  border-radius: 1rem;
+  width: 90%;
+  margin-bottom: 1rem;
+}
+
+.shopCard { /* cartes dans "Restaurants" */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--clear__color);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+.shopCard__image {
+  width: 100%;
+  height: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+.shopCard__détails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.shopCard__détails h2, .shopCard__détails p {
+  margin: 0.3rem;
+}
+
+.footer {
+  background-color: var(--bg_contrast__color);
+  color: var(--clear__color);
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.footer__title {
+  color: var(--clear__color);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Shrikhand";
+  margin-bottom: 1rem;
+}
+.footer__menu {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+.footer__menu li {
+  margin-bottom: 0.5rem;
 }/*# sourceMappingURL=main.css.map */
