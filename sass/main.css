@@ -6,6 +6,7 @@
   --main__color: #9356DC;
   --main_contrast__color: #FF79DA;
   --check__color: #99E2D0;
+  --check_font__color:#008766;
   --bg__color: #f6f6f6;
   --bg_contrast__color: #353535;
   --clear__color: #FFFFFF;
@@ -141,14 +142,22 @@ a {
   margin-bottom: 1rem;
 }
 
+/* section carrousel de cartes-liens vers restos */
 .shopCard { /* cartes dans "Restaurants" */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--clear__color);
   border-radius: 1rem;
   margin-bottom: 1rem;
   padding: 0;
+  width: 100%;
+}
+.shopCard__vignette {
+  position: absolute;
+  background-color: var(--check__color);
+  color: var(--check_font__color);
+  padding: 0.5rem;
+  right: 10%;
 }
 .shopCard__image {
   width: 100%;
