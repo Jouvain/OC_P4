@@ -16,7 +16,8 @@
         <img src="assets/images/logo/ohmyfood.png" alt="logo du site" class="header__logo">
     </header>
     <main>
-        <section class="searchbar"> <!-- bandeau avec formulaire de recherche -->
+        <!-------------------- bandeau avec formulaire de recherche -------->
+        <section class="searchbar"> 
             <form method="get" action="">
                 <label for="adresse"></label>
                 <i class="fa-solid fa-location-dot searchbar__icon"></i>
@@ -30,34 +31,30 @@
             <a href="#Restaurants" class="bouton"> Explorer nos restaurants </a>
         </section>
 
-        <section class="colonne"> <!-- encadrés explicatifs -->
+        <!---------------- encadrés explicatifs ------------->
+        <section class="colonne marges"> 
             <h1> Fonctionnement </h1>
             <div class="fonctionnement">
-                <div class="fonctionnement__cadre">
-                    <p class="fonctionnement__cadre__icon"> 1 </p>
-                    <div class="fonctionnement__cadre__encadré">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                        <h2> Choisissez un restaurant </h2>
-                    </div>
+                <div class="fonctionnement__encadré">
+                    <p class="fonctionnement__icon"> 1 </p>
+                    <i class="fa-solid fa-mobile-screen-button picto"></i>
+                    <h2> Choisissez un restaurant </h2>
                 </div>
-                <div class="fonctionnement__cadre">
-                    <p class="fonctionnement__cadre__icon"> 2 </p>
-                    <div class="fonctionnement__cadre__encadré">
-                        <i class="fa-solid fa-bars"></i>
-                        <h2> Composez votre menu </h2>
-                    </div>
+                <div class="fonctionnement__encadré">
+                    <p class="fonctionnement__icon"> 2 </p>
+                    <i class="fa-solid fa-bars picto"></i>
+                    <h2> Composez votre menu </h2>
                 </div>
-                <div class="fonctionnement__cadre">
-                    <p class="fonctionnement__cadre__icon"> 3 </p>
-                    <div class="fonctionnement__cadre__encadré">
-                        <i class="fa-solid fa-store"></i>
-                        <h2> Dégustez au restaurant </h2>
-                    </div>
-                </div>
+                <div class="fonctionnement__encadré">
+                    <p class="fonctionnement__icon"> 3 </p>
+                    <i class="fa-solid fa-store picto"></i>
+                    <h2> Dégustez au restaurant </h2>
+                </div>                
             </div>
         </section>
 
-        <section class="colonne background"> <!-- carrousel de cartes/liens vers restaurants -->
+        <!----------- carrousel de cartes/liens vers restaurants ------------>
+        <section class="colonne background"> 
             <h1 id="Restaurants"> Restaurants </h1>
             <div>
                 <a href="#">
@@ -93,7 +90,7 @@
                                 <h2> À la française </h2>
                                 <p> Cité Rouge </p>
                             </div>
-                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-solid fa-heart picto"></i>
                         </div>
                     </article>
                 </a>
@@ -105,7 +102,7 @@
                                 <h2> Le délice des sens </h2>
                                 <p> Folie-Méricourt </p>
                             </div>
-                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-solid fa-heart picto"></i>
                         </div>
                     </article>
                 </a>

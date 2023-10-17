@@ -62,13 +62,20 @@ a{
     background-color: var(--main_contrast__color);
     box-shadow: 0rem 0rem 0.5rem var(--main_contrast__color);
 }
-.colonne{
+.colonne{/* mise en colonne et padding réutiliés */
     display: flex;
     flex-direction: column;
     padding: 3rem 1.2rem;
 }
+.marges{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
 .background{
     background-color: var(--bg__color);
+}
+.picto{ /* couleur des pictogrammes */
+    color: var(--main__color);
 }
 
 
@@ -101,6 +108,8 @@ a{
     }
 }
 
+/*section Promesse, blurb et pseudobouton-lien*/
+/* le bouton est une classe globale */
 .promesse{
     display: flex;
     flex-direction: column;
@@ -111,25 +120,23 @@ a{
     }
 }
 
+/*section sur les encadrés de fonctionnement */
 .fonctionnement{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     padding: 0rem;
     margin: 0;
-    
-    &__cadre{/*invisible, contient les deux autres*/
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
         &__icon{
             background-color: var(--main__color);
-            border-radius: 3rem;
+            color: var(--main__color);
+            border-radius: 1.5rem;
             padding: 0.3rem 0.7rem;
             color: var(--clear__color);
             margin-bottom: 1rem;
+            position: absolute;
+            left: 15px;
         }
         &__encadré{
             display: flex;
@@ -138,10 +145,10 @@ a{
             align-items: center;
             background-color: var(--bg__color);
             border-radius: 1rem;
-            width: 90%;
+            width: 100%;
             margin-bottom: 1rem;
+            box-shadow: 0rem 0rem 0.5rem var(--main_contrast__color);
         }
-    }
 }
 
 /* section carrousel de cartes-liens vers restos */
