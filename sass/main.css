@@ -25,12 +25,12 @@ body {
   padding: 0;
 }
 
-h1 {
+h1, h2 {
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-h2 {
+h3 {
   font-size: 1rem;
   font-weight: 500;
 }
@@ -183,7 +183,7 @@ a {
   align-items: center;
   padding: 0.5rem;
 }
-.shopCard__détails h2, .shopCard__détails p {
+.shopCard__détails h3, .shopCard__détails p {
   margin: 0.3rem;
 }
 
