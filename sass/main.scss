@@ -1,28 +1,31 @@
+
+/********* appel de module(s) *******/
+@use 'sass:color';
+
+
 /*************** DESIGN SYSTEM ***************/
 
-:root{
+/* color */
+$main__color: #9356DC;
+$main_contrast__color: #FF79DA;
+$main__gradient: color.mix($main__color, $main_contrast__color, 50%);
+$check__color: #99E2D0;
+$check_font__color:#008766;
+$bg__color: #f6f6f6;
+$bg_contrast__color: #353535;
+$clear__color: #FFFFFF;
+$bg_shade__color : #EAEAEA;
+$text__color: #000000;
 
-    font-size: 16px;
-    /* color */
-    --main__color: #9356DC;
-    --main_contrast__color: #FF79DA;
-    --check__color: #99E2D0;
-    --check_font__color:#008766;
-    --bg__color: #f6f6f6;
-    --bg_contrast__color: #353535;
-    --clear__color: #FFFFFF;
-    --bg_shade__color : #EAEAEA;
-    --text__color: #000000;
+/* text */
+$names__font: "Shrikhand";
+$body__font: "Roboto";
 
-    /* text */
-    --names__font: "Shrikland";
-    --body__font: "Roboto";
-}
 
 /********* GLOBAL ******************/
 
 body{
-    font-family: var(--body__font);
+    font-family: $body__font;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -47,20 +50,20 @@ a{
 
 
 .bouton{
-    background-color: var(--main__color);
+    background-color: $main__gradient;
     border-radius: 2rem;
-    color: var(--clear__color);
+    color: $clear__color;
     padding: 0.8rem 1.2rem 0.8rem 1.2rem;
     text-decoration: none;
-    box-shadow: 0rem 0rem 0.5rem var(--main__color);
+    box-shadow: 0rem 0rem 0.5rem $main__color;
     margin-left: auto;
     margin-right: auto;
     width: 11rem;
     
 }
 .bouton:hover{
-    background-color: var(--main_contrast__color);
-    box-shadow: 0rem 0rem 0.5rem var(--main_contrast__color);
+    background-color: color.scale($main__gradient,$lightness:20%);
+    box-shadow: 0rem 0rem 0.5rem $main_contrast__color;
 }
 .colonne{/* mise en colonne et padding réutiliés */
     display: flex;
@@ -72,20 +75,19 @@ a{
     padding-right: 2rem;
 }
 .background{
-    background-color: var(--bg__color);
+    background-color: $bg__color;
 }
 .picto{ /* couleur des pictogrammes */
-    color: var(--main__color);
+    color: $main__color;
 }
 
 
 /*************** Homepage - Mobile *******/
-
 .header{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--clear__color);
+    background-color: $clear__color;
     padding: 0.8rem;
     &__logo{
         width: 10rem;
@@ -96,7 +98,7 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--bg_shade__color);
+    background-color: $bg_shade__color;
     padding: 0.8rem;
     &__icon{
         margin-right: 0.5rem;
@@ -104,7 +106,7 @@ a{
     }
     &__entry{
         border: none;
-        background-color: var(--bg_shade__color);
+        background-color: $bg_shade__color;
     }
 }
 
@@ -129,25 +131,27 @@ a{
     padding: 0rem;
     margin: 0;
         &__icon{
-            background-color: var(--main__color);
-            color: var(--main__color);
+            background-color: $main__color;
             border-radius: 1.5rem;
             padding: 0.3rem 0.7rem;
-            color: var(--clear__color);
+            color: $clear__color;
             margin-bottom: 1rem;
             position: absolute;
             left: 15px;
         }
-        &__encadré{
+        &__encadre{
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
             align-items: center;
-            background-color: var(--bg__color);
+            background-color: $bg__color;
             border-radius: 1rem;
             width: 100%;
             margin-bottom: 1rem;
-            box-shadow: 0rem 0rem 0.5rem var(--main_contrast__color);
+            box-shadow: 0rem 0rem 0.5rem $main_contrast__color;
+            i{
+                margin-right: 1rem;
+                margin-left: 2rem;
+            }
         }
 }
 
@@ -160,10 +164,12 @@ a{
     margin-bottom: 1rem;
     padding: 0;
     width: 100%;
+    background-color: $clear__color;
+    box-shadow: 0rem 0rem 0.5rem $check__color;
     &__vignette{
         position: absolute;
-        background-color: var(--check__color);
-        color: var(--check_font__color);
+        background-color: $check__color;
+        color: $check_font__color;
         padding: 0.5rem;
         right: 10%;
     }
@@ -173,7 +179,7 @@ a{
         object-fit: cover;
         border-radius: 1rem 1rem 0 0;
     }
-    &__détails{
+    &__details{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -186,17 +192,17 @@ a{
 }
 
 .footer{
-    background-color: var(--bg_contrast__color);
-    color: var(--clear__color);
+    background-color: $bg_contrast__color;
+    color: $clear__color;
     padding: 1.3rem;
     display: flex;
     flex-direction: column;
     align-items: baseline;
     &__title{
-        color: var(--clear__color);
+        color: $clear__color;
         font-size: 1.5rem;
         font-weight: 400;
-        font-family: "Shrikhand";
+        font-family: $names__font;
         margin-bottom: 1rem;
     }
     &__menu{
