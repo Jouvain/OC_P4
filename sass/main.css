@@ -62,28 +62,40 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  /*
+  &::before{//fond qui disparait au chargement
+      content: "";
+      background-color: $bg__color;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      animation: loader__page $anim__duration*6 500ms both;
+  }
+  */
 }
-body::before {
-  content: "";
-  background-color: #f6f6f6;
-  position: absolute;
+
+.loaderContainer {
+  position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
   z-index: 3;
   animation: loader__page 3000ms 500ms both;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-body .loader {
+.loaderContainer .loader {
   background-color: #f6f6f6;
   border: solid 2px #353535;
   box-shadow: 0rem 0rem 5rem #353535;
   border-radius: 100rem;
   position: fixed;
-  top: 5vh;
-  bottom: 5vh;
-  left: 5vw;
-  right: 5vw;
   width: 20rem;
   height: 20rem;
   margin-left: auto;
@@ -91,19 +103,19 @@ body .loader {
   z-index: 4;
   animation: loader 3000ms forwards;
 }
-body .loader__in {
+.loaderContainer .loader__in {
   animation: loader__in 3000ms both;
 }
-body .loader__in--1 {
+.loaderContainer .loader__in--1 {
   animation-delay: 100ms;
 }
-body .loader__in--2 {
+.loaderContainer .loader__in--2 {
   animation-delay: 200ms;
 }
-body .loader__in--3 {
+.loaderContainer .loader__in--3 {
   animation-delay: 300ms;
 }
-body .loader__in--1 {
+.loaderContainer .loader__in--1 {
   background-color: #9356DC;
   width: 5%;
   height: 5%;
@@ -112,7 +124,7 @@ body .loader__in--1 {
   top: 13.3333333333rem;
   left: 13.3333333333rem;
 }
-body .loader__in--2 {
+.loaderContainer .loader__in--2 {
   background-color: #9356DC;
   width: 5%;
   height: 5%;
@@ -121,7 +133,7 @@ body .loader__in--2 {
   top: 9.5238095238rem;
   left: 15.3846153846rem;
 }
-body .loader__in--3 {
+.loaderContainer .loader__in--3 {
   background-color: #9356DC;
   width: 5%;
   height: 5%;
@@ -246,13 +258,11 @@ a {
   margin-right: 0.5rem;
   margin-left: 2rem;
 }
-.searchbar__entry {
+.searchbar__input {
   border: none;
   background-color: #EAEAEA;
 }
 
-/*section Promesse, blurb et pseudobouton-lien*/
-/* le bouton est une classe globale */
 .promesse {
   display: flex;
   flex-direction: column;
@@ -263,33 +273,25 @@ a {
   margin-bottom: 2rem;
 }
 
-/*section sur les encadrés de fonctionnement */
 .fonctionnement {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
 }
 @media (min-width: 760px) {
   .fonctionnement {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
     width: 36%;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 2rem;
   }
 }
 @media (min-width: 1024px) {
   .fonctionnement {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 2rem;
     width: unset;
-    margin-left: unset;
-    margin-right: unset;
   }
 }
 .fonctionnement__icon {
@@ -313,22 +315,14 @@ a {
   align-items: center;
   background-color: #f6f6f6;
   border-radius: 1rem;
-  width: 100%;
-  margin-bottom: 1rem;
   box-shadow: 0rem 0rem 0.5rem #FF79DA;
 }
 .fonctionnement__encadre i {
-  margin-right: 1rem;
-  margin-left: 2rem;
+  margin: auto 1rem auto 2rem;
 }
 @media (min-width: 760px) {
   .fonctionnement__encadre i {
     margin-left: 0rem;
-  }
-}
-@media (min-width: 760px) {
-  .fonctionnement__encadre {
-    width: unset;
   }
 }
 

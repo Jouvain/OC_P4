@@ -12,31 +12,32 @@
 </head>
 
 <body>
-    <div class="loader">
-        <div class="loader__in loader__in--1"></div>
-        <div class="loader__in loader__in--2"></div>
-        <div class="loader__in loader__in--3"></div>
-        
+    <div class="loaderContainer"> <!-- fond uni du loader -->
+        <div class="loader"> <!-- cercle intérieur rotatif -->
+            <div class="loader__in loader__in--1"></div>
+            <div class="loader__in loader__in--2"></div>
+            <div class="loader__in loader__in--3"></div>
+        </div>
     </div>
     <header class="header nolarge">
         <img src="assets/images/logo/ohmyfood.png" alt="logo du site" class="header__logo">
     </header>
     <main>
+
         <section>
                 <!-- bandeau avec formulaire de recherche -->
                 <form method="get" action="#" class="searchbar">
                     <label for="adresse"></label>
                     <i class="fa-solid fa-location-dot searchbar__icon"></i>
-                    <input type="text" disabled="disabled" name="adresse" id="adresse" placeholder="Paris, Belleville" class="searchbar__entry">
+                    <input type="text" disabled="disabled" name="adresse" id="adresse" placeholder="Paris, Belleville" class="searchbar__input">
                 </form>
-            
-
             <div class="promesse background"> <!-- Promesse + blurb + bouton/lien -->
                 <h1> Réservez le menu qui vous convient </h1>
                 <p> Découvrez des restaurants d'exception, sélectionnés par nos soins </p>
                 <a href="#Restaurants" class="bouton"> Explorer nos restaurants </a>
             </div>
         </section>
+        
         <!-- encadrés explicatifs -->
         <section class="colonne marges nolarge"> 
             <h2> Fonctionnement </h2>
