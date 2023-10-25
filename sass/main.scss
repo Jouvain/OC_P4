@@ -9,6 +9,7 @@
 $main__color: #9356DC;
 $main_contrast__color: #FF79DA;
 $main__gradient: color.mix($main__color, $main_contrast__color, 50%);
+$main__linear: linear-gradient($main__color, $main_contrast__color);
 $check__color: #99E2D0;
 $check_font__color:#008766;
 $bg__color: #f6f6f6;
@@ -24,6 +25,7 @@ $body__font: "Roboto";
 /* Breakpoints from Mobile */
 $query__desk:1024px;
 $query__tablet:760px;
+$query__large:1400px;
 
 $anim__duration:500ms;
 
@@ -80,6 +82,12 @@ $loader__height: $loader__width;
     }
 }
 
+.nolarge{
+    @media (min-width:$query__large){
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+}
 
 body{
     font-family: $body__font;
@@ -87,6 +95,7 @@ body{
     margin: 0;
     padding: 0;
     position: relative;
+    
     
     &::before{//fond qui disparait au chargement
         content: "";
@@ -100,21 +109,21 @@ body{
         animation: loader__page $anim__duration*6 500ms both;
     }
     .loader{
-    background-color: $bg__color;
-    border: solid 2px $bg_contrast__color;
-    box-shadow: 0rem 0rem 5rem $bg_contrast__color;
-    border-radius: 100rem;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: $loader__width;
-    height: $loader__height;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 4;
-    animation: loader $anim__duration*6 forwards;
+        background-color: $bg__color;
+        border: solid 2px $bg_contrast__color;
+        box-shadow: 0rem 0rem 5rem $bg_contrast__color;
+        border-radius: 100rem;
+        position: fixed;
+        top: 5vh;
+        bottom: 5vh;
+        left: 5vw;
+        right: 5vw;
+        width: $loader__width;
+        height: $loader__height;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 4;
+        animation: loader $anim__duration*6 forwards;
         &__in{
             
             animation: loader__in $anim__duration*6 both;
@@ -173,10 +182,10 @@ a{
     color: inherit;
 }
 
-    
+
 
 .bouton{
-    background-color: $main__gradient;
+    background-image: $main__linear;
     border-radius: 2rem;
     color: $clear__color;
     padding: 0.8rem 1.2rem 0.8rem 1.2rem;
@@ -220,7 +229,12 @@ a{
     flex-direction: column;
     padding: 3rem 1.2rem;
 }
-
+.padding{
+    @media(min-width:$query__tablet){
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
 .marges{
     padding-left: 2rem;
     padding-right: 2rem;
@@ -228,6 +242,11 @@ a{
         padding-left: 10%;
         padding-right: 10%;
     }
+    @media(min-width:$query__large){
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    
 }
 .background{
     background-color: $bg__color;
@@ -282,16 +301,27 @@ a{
 
 /*section sur les encadrés de fonctionnement */
 .fonctionnement{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0rem;
-    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     @media(min-width:$query__tablet){
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 36%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media(min-width:$query__desk){
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2rem;
+        width: unset;
+        margin-left: unset;
+        margin-right: unset;
     }
     &__icon{
         background-color: $main__color;
@@ -328,12 +358,7 @@ a{
     }
 }
 
-.padding{
-    @media(min-width:$query__tablet){
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
-}
+
 /* pour placer cartes en desk et tablet */
 .carrousel{
     @media(min-width:$query__tablet){
