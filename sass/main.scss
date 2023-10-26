@@ -1,21 +1,20 @@
 
-/********* appel de module(s) *******/
+/********* appel de module(s) *********************************/
 @use 'sass:color';
 
 
-/*************** DESIGN SYSTEM ***************/
+/*************** DESIGN SYSTEM *****************************/
 
 /* color */
 $main__color: #9356DC;
 $main_contrast__color: #FF79DA;
-$main__gradient: color.mix($main__color, $main_contrast__color, 50%);
 $main__linear: linear-gradient($main__color, $main_contrast__color);
 $check__color: #99E2D0;
 $check_font__color:#008766;
 $bg__color: #f6f6f6;
 $bg_contrast__color: #353535;
-$clear__color: #FFFFFF;
 $bg_shade__color : #EAEAEA;
+$clear__color: #FFFFFF;
 $text__color: #000000;
 
 /* text */
@@ -23,18 +22,19 @@ $names__font: "Shrikhand";
 $body__font: "Roboto";
 
 /* Breakpoints from Mobile */
-$query__desk:1024px;
 $query__tablet:760px;
+$query__desk:1024px;
 $query__large:1400px;
 
+/* Animation's bit */
 $anim__duration:500ms;
-
 $loader__width:20rem;
 $loader__height: $loader__width;
 
 
-/********* GLOBAL ******************/
+/********* GLOBAL **************************************/
 
+/* Keyframes */
 @keyframes loader{
     0%{
         scale: 1;
@@ -48,7 +48,6 @@ $loader__height: $loader__width;
         transform: rotate(600deg);
     }
 }
-
 @keyframes loader__in{
     0%{
         scale:0;
@@ -63,7 +62,6 @@ $loader__height: $loader__width;
         opacity: 0;
     }
 }
-
 @keyframes loader__page{
     0%{
         opacity: 1;
@@ -82,6 +80,7 @@ $loader__height: $loader__width;
     }
 }
 
+/* MIXINS */
 @mixin loader__in{
     background-color: $main__color;
     width: 5%;
@@ -90,36 +89,32 @@ $loader__height: $loader__width;
     position: absolute;
 }
 
-.nolarge{
-    @media (min-width:$query__large){
-        padding-left: 10vw;
-        padding-right: 10vw;
-    }
-}
-
+/* sélecteurs-éléments */
 body{
     font-family: $body__font;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     position: relative;
-    
-    /*
-    &::before{//fond qui disparait au chargement
-        content: "";
-        background-color: $bg__color;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 3;
-        animation: loader__page $anim__duration*6 500ms both;
-    }
-    */
+}
+h1, h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+h3{
+    font-size: 1rem;
+    font-weight: 500;
+}
+p{
+    font-size: 1rem;
+    font-weight: 300;
+}
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
-
+/* composants */
 .loaderContainer{
     position: fixed;
     top: 0;
@@ -169,42 +164,18 @@ body{
         }
     }
 }
-
-h1, h2{
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-h3{
-    font-size: 1rem;
-    font-weight: 500;
-}
-p{
-    font-size: 1rem;
-    font-weight: 300;
-}
-
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
-
-
 .bouton{
     background-image: $main__linear;
     border-radius: 2rem;
     color: $clear__color;
     padding: 0.8rem 1.2rem 0.8rem 1.2rem;
-    text-decoration: none;
     box-shadow: 0rem 0rem 0.5rem $main__color;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     width: 11rem;
     transition: opacity $anim__duration;
     position: relative;
     &:hover{
         opacity:0.7;
-        //box-shadow: 0rem 0.3rem 0.5rem $main__color;
         &::after{
             opacity:1;
         }
@@ -222,14 +193,10 @@ a{
         width: 11rem;
         transition: opacity $anim__duration;
         opacity: 0;
-    }
-    
+    } 
 }
 
-
-
-
-
+/* classes génériques */
 .colonne{/* mise en colonne et padding réutiliés */
     display: flex;
     flex-direction: column;
@@ -254,18 +221,12 @@ a{
     }
     
 }
-.background{
-    background-color: $bg__color;
-}
 .picto{ /* couleur des pictogrammes */
     color: $main__color;
 }
 
 
-
-
-
-/*************** Homepage - Mobile *******/
+/*************** Homepage ***********************************/
 
 // section du header
 .header{
@@ -277,6 +238,7 @@ a{
     &__logo{
         width: 10rem;
     }
+    @include nolarge;
 }
 
 // section grise avec barre de recherche
@@ -314,15 +276,18 @@ a{
     grid-template-columns: 1fr;
     gap: 1rem;
     width: 100%;
+    @include nolarge;
     @media(min-width:$query__tablet){
         width: 36%;
         gap: 2rem;
+        margin: auto;
     }
     @media(min-width:$query__desk){
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         gap: 2rem;
         width: unset;
+        margin: unset;
     }
     &__icon{
         background-color: $main__color;
@@ -354,17 +319,19 @@ a{
     }
 }
 
-
 /* pour placer cartes en desk et tablet */
-.carrousel{
-    @media(min-width:$query__tablet){
-        display: grid;
-        grid-template-columns:1fr 1fr;
-        grid-template-rows:1fr 1fr;
-        row-gap: 1rem;
-        column-gap: 3rem;
+.restaurants{
+    background-color: $bg__color;
+    &__carrousel{
+        @media(min-width:$query__tablet){
+            display: grid;
+            grid-template-columns:1fr 1fr;
+            grid-template-rows:1fr 1fr;
+            gap: 1rem 3rem;
+        }
     }
 }
+
 
 /* section carrousel de cartes-liens vers restos */
 .shopCard{/* cartes dans "Restaurants" */
@@ -418,10 +385,6 @@ a{
     }
 }
 
-
-   
-
-
 .footer{
     background-color: $bg_contrast__color;
     color: $clear__color;
@@ -429,6 +392,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: baseline;
+    @include nolarge;
     @media(min-width:$query__tablet){
         flex-direction: row-reverse;
         justify-content: flex-start;
