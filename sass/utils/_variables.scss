@@ -1,0 +1,27 @@
+/*************** DESIGN SYSTEM *****************************/
+
+/* color */
+$main__color: #9356DC;
+$main_contrast__color: #FF79DA;
+$main__linear: linear-gradient($main__color, $main_contrast__color);
+$check__color: #99E2D0;
+$check_font__color:#008766;
+$bg__color: #f6f6f6;
+$bg_contrast__color: #353535;
+$bg_shade__color : #EAEAEA;
+$clear__color: #FFFFFF;
+$text__color: #000000;
+
+/* text */
+$names__font: "Shrikhand";
+$body__font: "Roboto";
+
+/* Breakpoints from Mobile */
+$query__tablet:760px;
+$query__desk:1024px;
+$query__large:1400px;
+
+/* Animation's bit */
+$anim__duration:500ms;
+$loader__width:20rem;
+$loader__height: $loader__width;

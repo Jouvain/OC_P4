@@ -1,0 +1,50 @@
+// section du header
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: $clear__color;
+    padding: 0.8rem;
+    &__logo{
+        width: 10rem;
+    }
+}
+
+.footer{
+    background-color: $bg_contrast__color;
+    color: $clear__color;
+    padding: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    @media(min-width:$query__tablet){
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        padding-right: 2rem;
+    }
+    &__title{
+        color: $clear__color;
+        font-size: 1.5rem;
+        font-weight: 400;
+        font-family: $names__font;
+        margin-bottom: 1rem;
+    }
+    &__menu{
+        list-style-type: none;
+        padding: 0;
+        margin-top: 1rem;
+        @media(min-width:$query__tablet){
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-right: 1rem;
+            width: 100%;
+        }
+        @media(min-width:$query__desk){
+            width: 70%;
+        }
+        li{
+            margin-bottom: 0.5rem;
+        }
+    }
+}
