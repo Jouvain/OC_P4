@@ -561,6 +561,29 @@ a {
   box-shadow: 0 0 0.5rem #99E2D0;
   margin-top: 1rem;
   position: relative;
+  /*
+  &::after{
+      content: "";
+      position: absolute;
+      z-index: 3;
+      opacity: 0;
+      top: 0;
+      right: 0;
+      background-color: $check__color;
+      padding: 0.5rem;
+      border-radius: 0 1rem 1rem 0;
+      box-shadow: 0 0 0.5rem $check__color;
+      height: 80%;
+      width: 10%;
+      transition: all 1s;
+      transform: translate(50%);
+  }
+  &:hover{
+      &::after{
+          opacity: 1;
+          transform: translate(0);
+      }
+  }*/
 }
 .menu__card h3 {
   margin: 0.3rem;
@@ -569,7 +592,10 @@ a {
   margin: 0rem;
   font-size: 0.9rem;
 }
-.menu__card div {
+.menu__card:hover .checkbox {
+  transform: scaleX(1);
+}
+.menu__subcard {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -593,4 +619,28 @@ a {
 }
 .menu__dessert {
   animation: menu__loading 1500ms 1000ms both linear;
+}
+
+.checkbox {
+  background-color: #99E2D0;
+  border-radius: 0 0.9rem 0.9rem 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 15%;
+  margin: 0;
+  z-index: 2;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms;
+}
+.checkbox__picto {
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #99E2D0;
+  padding: 0.5rem;
+  position: absolute;
+  top: 25%;
+  left: 25%;
 }/*# sourceMappingURL=main.css.map */

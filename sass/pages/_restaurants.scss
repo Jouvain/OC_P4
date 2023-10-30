@@ -104,14 +104,42 @@
             margin: 0rem;
             font-size: 0.9rem;
         }
-        & div{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0.3rem;
-            padding: 0rem;
+        &:hover{
+            .checkbox{
+                transform: scaleX(1);
+            }
         }
+        /*
+        &::after{
+            content: "";
+            position: absolute;
+            z-index: 3;
+            opacity: 0;
+            top: 0;
+            right: 0;
+            background-color: $check__color;
+            padding: 0.5rem;
+            border-radius: 0 1rem 1rem 0;
+            box-shadow: 0 0 0.5rem $check__color;
+            height: 80%;
+            width: 10%;
+            transition: all 1s;
+            transform: translate(50%);
+        }
+        &:hover{
+            &::after{
+                opacity: 1;
+                transform: translate(0);
+            }
+        }*/
+    }
+    &__subcard{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.3rem;
+        padding: 0rem;
     }
     &__price{
         font-family: $body__font;
@@ -132,4 +160,26 @@
     }
 }
 
-
+.checkbox{
+    background-color: $check__color;
+    border-radius: 0 0.9rem 0.9rem 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 15%;
+    margin: 0;
+    z-index: 2;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all $anim__duration;
+    &__picto{
+        border-radius: 50%;
+        background-color: $clear__color;
+        color: $check__color;
+        padding: 0.5rem;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }   
+}
