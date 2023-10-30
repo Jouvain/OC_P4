@@ -505,15 +505,20 @@ a {
   margin: 0.3rem;
 }
 .menu__card p {
-  margin: 0.3rem;
+  margin: 0rem;
   font-size: 0.9rem;
 }
+.menu__card div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.3rem;
+  padding: 0rem;
+}
 .menu__price {
-  position: absolute;
-  bottom: 0.9rem;
-  right: 1rem;
-  font-weight: 500;
-  background-color: #FFFFFF;
+  font-family: "Roboto";
+  font-weight: 700;
   font-size: 0.9rem;
 }
 .menu__bouton {

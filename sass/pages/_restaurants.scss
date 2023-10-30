@@ -76,16 +76,21 @@
             margin: 0.3rem;
         }
         & p{
-            margin: 0.3rem;
+            margin: 0rem;
             font-size: 0.9rem;
+        }
+        & div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.3rem;
+            padding: 0rem;
         }
     }
     &__price{
-        position: absolute;
-        bottom: 0.9rem;
-        right: 1rem;
-        font-weight: 500;
-        background-color: $clear__color;
+        font-family: $body__font;
+        font-weight: 700;
         font-size: 0.9rem;
     }
     &__bouton{
