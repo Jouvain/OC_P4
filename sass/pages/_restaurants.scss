@@ -8,10 +8,24 @@
 
 .fronton{
     position: relative;
+    @media (min-width:$query__tablet){
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    &__picto{
+        @media (min-width:$query__tablet){
+            position: relative;
+        }
+        
+    }
     &__titre{
         font-family: $names__font;
         font-size: 1.75rem;
         font-weight: 400;
+        @media (min-width:$query__tablet){
+            margin-right: 2rem;
+        }
     }
     &__imgup{
         top: 40%;
@@ -21,6 +35,9 @@
         transition: opacity $anim__duration;
         &:hover{
             opacity:0
+        }
+        @media (min-width:$query__tablet){
+            right: 20%;
         }
     }
     &__imgdown{
@@ -32,6 +49,9 @@
         &:hover{
             opacity: 1;
         }
+        @media (min-width:$query__tablet){
+            right: 20%;
+        }
     }
 }
 
@@ -42,6 +62,17 @@
     border-radius: 2rem 2rem 0 0;
     position: relative;
     padding: 0 1rem;
+    @media (min-width:$query__tablet){
+        padding: 0 13rem;
+    }
+    @media (min-width:$query__desk){
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+    @media (min-width:$query__large){
+        margin-left: 12rem;
+        margin-right: 12rem
+    }
     &__title{
         font-family: $body__font;
         font-size: 1rem;
@@ -58,12 +89,6 @@
         font-size: 1.125rem;
         font-weight: 500;
         margin-bottom: 0;
-    }
-    &__carrousel{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-
     }
     &__card{
         background-color: $clear__color;
@@ -96,7 +121,15 @@
     &__bouton{
         margin: 2.5rem auto;
     }
-    
+    &__entry{
+        animation: menu__loading $anim__duration*3 $menu__delay*1 both linear;
+    }
+    &__course{
+        animation: menu__loading $anim__duration*3 $menu__delay*5 both linear;
+    }
+    &__dessert{
+        animation: menu__loading $anim__duration*3 $menu__delay*10 both linear;
+    }
 }
 
 

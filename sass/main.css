@@ -52,6 +52,28 @@
     scale: 0;
   }
 }
+@keyframes menu__loading {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  25% {
+    opacity: 0.25;
+    transform: translateX(7.5rem);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(5rem);
+  }
+  75% {
+    opacity: 0.75;
+    transform: translateX(2.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 /* sélecteurs-éléments */
 body {
   font-family: "Roboto";
@@ -436,10 +458,27 @@ a {
 .fronton {
   position: relative;
 }
+@media (min-width: 760px) {
+  .fronton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media (min-width: 760px) {
+  .fronton__picto {
+    position: relative;
+  }
+}
 .fronton__titre {
   font-family: "Shrikhand";
   font-size: 1.75rem;
   font-weight: 400;
+}
+@media (min-width: 760px) {
+  .fronton__titre {
+    margin-right: 2rem;
+  }
 }
 .fronton__imgup {
   top: 40%;
@@ -451,6 +490,11 @@ a {
 .fronton__imgup:hover {
   opacity: 0;
 }
+@media (min-width: 760px) {
+  .fronton__imgup {
+    right: 20%;
+  }
+}
 .fronton__imgdown {
   top: 40%;
   right: 0;
@@ -461,6 +505,11 @@ a {
 .fronton__imgdown:hover {
   opacity: 1;
 }
+@media (min-width: 760px) {
+  .fronton__imgdown {
+    right: 20%;
+  }
+}
 
 .menu {
   display: flex;
@@ -469,6 +518,23 @@ a {
   border-radius: 2rem 2rem 0 0;
   position: relative;
   padding: 0 1rem;
+}
+@media (min-width: 760px) {
+  .menu {
+    padding: 0 13rem;
+  }
+}
+@media (min-width: 1024px) {
+  .menu {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+@media (min-width: 1400px) {
+  .menu {
+    margin-left: 12rem;
+    margin-right: 12rem;
+  }
 }
 .menu__title {
   font-family: "Roboto";
@@ -487,11 +553,6 @@ a {
   font-size: 1.125rem;
   font-weight: 500;
   margin-bottom: 0;
-}
-.menu__carrousel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
 }
 .menu__card {
   background-color: #FFFFFF;
@@ -523,4 +584,13 @@ a {
 }
 .menu__bouton {
   margin: 2.5rem auto;
+}
+.menu__entry {
+  animation: menu__loading 1500ms 100ms both linear;
+}
+.menu__course {
+  animation: menu__loading 1500ms 500ms both linear;
+}
+.menu__dessert {
+  animation: menu__loading 1500ms 1000ms both linear;
 }/*# sourceMappingURL=main.css.map */
