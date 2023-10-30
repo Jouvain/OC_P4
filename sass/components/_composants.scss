@@ -57,7 +57,6 @@
     padding: 0.8rem 1.2rem 0.8rem 1.2rem;
     box-shadow: 0rem 0rem 0.5rem $main__color;
     margin: auto;
-    width: 11rem;
     transition: opacity $anim__duration;
     position: relative;
     &:hover{
@@ -76,7 +75,6 @@
         border-radius: 2rem;
         padding: 0.8rem 1.2rem 0.8rem 1.2rem;
         box-shadow: 0rem 0.3rem 0.5rem $main__color;
-        width: 11rem;
         transition: opacity $anim__duration;
         opacity: 0;
     } 
@@ -84,4 +82,10 @@
 
 .picto{ /* couleur des pictogrammes */
     color: $main__color;
+}
+
+.return{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
 }
