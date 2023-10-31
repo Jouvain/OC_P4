@@ -97,6 +97,7 @@
         box-shadow: 0 0 0.5rem $check__color;
         margin-top: 1rem;
         position: relative;
+        overflow-x: hidden;
         & h3{
             margin: 0.3rem;
         }
@@ -106,7 +107,7 @@
         }
         &:hover{
             .checkbox{
-                transform: scaleX(1);
+                transform: translateX(0);
             }
         }
         /*
@@ -169,10 +170,11 @@
     height: 100%;
     width: 15%;
     margin: 0;
-    z-index: 2;
-    transform: scaleX(0);
+    z-index: 1;
+    transform: translateX(100%);
     transform-origin: right;
     transition: all $anim__duration;
+    
     &__picto{
         border-radius: 50%;
         background-color: $clear__color;

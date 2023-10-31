@@ -561,6 +561,7 @@ a {
   box-shadow: 0 0 0.5rem #99E2D0;
   margin-top: 1rem;
   position: relative;
+  overflow-x: hidden;
   /*
   &::after{
       content: "";
@@ -593,7 +594,7 @@ a {
   font-size: 0.9rem;
 }
 .menu__card:hover .checkbox {
-  transform: scaleX(1);
+  transform: translateX(0);
 }
 .menu__subcard {
   display: flex;
@@ -630,8 +631,8 @@ a {
   height: 100%;
   width: 15%;
   margin: 0;
-  z-index: 2;
-  transform: scaleX(0);
+  z-index: 1;
+  transform: translateX(100%);
   transform-origin: right;
   transition: all 500ms;
 }
