@@ -131,29 +131,6 @@
                 width: 70%;
             }
         }
-        /*
-        &::after{
-            content: "";
-            position: absolute;
-            z-index: 3;
-            opacity: 0;
-            top: 0;
-            right: 0;
-            background-color: $check__color;
-            padding: 0.5rem;
-            border-radius: 0 1rem 1rem 0;
-            box-shadow: 0 0 0.5rem $check__color;
-            height: 80%;
-            width: 10%;
-            transition: all 1s;
-            transform: translate(50%);
-        }
-        &:hover{
-            &::after{
-                opacity: 1;
-                transform: translate(0);
-            }
-        }*/
     }
     &__subcard{
         display: flex;
