@@ -562,6 +562,8 @@ a {
   margin-top: 1rem;
   position: relative;
   overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   /*
   &::after{
       content: "";
@@ -588,13 +590,32 @@ a {
 }
 .menu__card h3 {
   margin: 0.3rem;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  transition: width 500ms;
 }
 .menu__card p {
   margin: 0rem;
   font-size: 0.9rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  width: 100%;
+  transition: width 500ms;
 }
 .menu__card:hover .checkbox {
   transform: translateX(0);
+}
+.menu__card:hover .menu__price {
+  transform: translateX(-5rem);
+}
+.menu__card:hover p {
+  width: 60%;
+}
+.menu__card:hover h3 {
+  width: 70%;
 }
 .menu__subcard {
   display: flex;
@@ -608,6 +629,8 @@ a {
   font-family: "Roboto";
   font-weight: 700;
   font-size: 0.9rem;
+  transform: translateX(0);
+  transition: transform 500ms;
 }
 .menu__bouton {
   margin: 2.5rem auto;
@@ -629,7 +652,7 @@ a {
   right: 0;
   top: 0;
   height: 100%;
-  width: 15%;
+  width: 5rem;
   margin: 0;
   z-index: 1;
   transform: translateX(100%);
@@ -642,6 +665,7 @@ a {
   color: #99E2D0;
   padding: 0.5rem;
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=main.css.map */
