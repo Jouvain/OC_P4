@@ -8,8 +8,7 @@
     background-color: $bg_shade__color;
     padding: 0.8rem;
     &__icon{
-        margin-right: 0.5rem;
-        margin-left: 2rem;
+        margin: auto 0.5rem auto 2rem;
     }
     &__input{
         border: none;
@@ -141,6 +140,9 @@
         right: 5%;
         opacity: 0;
         transition: opacity $anim__duration*2;
+        color: transparent;
+        background-image: $main__linear;
+        background-clip: text;
         &:hover{
             opacity: 1;
         }

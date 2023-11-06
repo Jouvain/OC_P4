@@ -28,9 +28,7 @@
         }
     }
     &__imgup{
-        top: 40%;
-        right: 0;
-        position: absolute;
+        @include img--restaurant;
         opacity: 1;
         transition: opacity $anim__duration;
         &:hover{
@@ -41,9 +39,7 @@
         }
     }
     &__imgdown{
-        top: 40%;
-        right: 0;
-        position: absolute;
+        @include img--restaurant;
         opacity: 0;
         transition: opacity $anim__duration*2;
         &:hover{
@@ -54,6 +50,7 @@
         }
     }
 }
+
 
 .menu{
     display: flex;
@@ -66,12 +63,10 @@
         padding: 0 13rem;
     }
     @media (min-width:$query__desk){
-        margin-left: 6rem;
-        margin-right: 6rem;
+        margin: auto 6rem;
     }
     @media (min-width:$query__large){
-        margin-left: 12rem;
-        margin-right: 12rem
+        margin: auto 12rem;
     }
     &__title{
         font-family: $body__font;
@@ -180,7 +175,6 @@
         background-color: $clear__color;
         color: $check__color;
         padding: 0.5rem;
-        
         position: absolute;
         top: 50%;
         left: 50%;

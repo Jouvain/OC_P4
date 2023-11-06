@@ -19,3 +19,21 @@
         padding-right: 20%;
     }
 }
+@mixin img--restaurant{
+    top: 40%;
+    right: 0;
+    position: absolute;
+}
+@mixin bouton{ // style pour composant "bouton"
+    border-radius: 2rem;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+    box-shadow: 0rem 0rem 0.5rem $main__color;
+}
+@mixin loader{
+    position: fixed;
+    width: $loader__width;
+    height: $loader__height;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 4;
+}

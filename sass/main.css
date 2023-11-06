@@ -8,48 +8,54 @@
 /* Animation's bit */
 /* MIXINS */
 /* Keyframes */
-@keyframes loader {
+@keyframes scalingLoader {
   0% {
-    scale: 1;
-    transform: rotate(0deg);
+    transform: scale(1);
   }
   25%, 50%, 75% {
-    scale: 0.5;
+    transform: scale(0.5);
   }
   100% {
-    scale: 0;
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
     transform: rotate(600deg);
   }
 }
 @keyframes loader__in {
   0% {
-    scale: 0;
+    transform: scale(0);
     opacity: 0;
   }
   50% {
-    scale: 3;
+    transform: scale(3);
     opacity: 1;
   }
   100% {
-    scale: 0.2;
+    transform: scale(0.2);
     opacity: 0;
   }
 }
 @keyframes loader__page {
   0% {
     opacity: 1;
-    scale: 1;
+    transform: scale(1);
   }
   25%, 50%, 75% {
     opacity: 1;
-    scale: 1;
+    transform: scale(1);
   }
   80% {
     opacity: 0;
   }
   100% {
     opacity: 0;
-    scale: 0;
+    transform: scale(0);
   }
 }
 @keyframes menu__loading {
@@ -67,7 +73,7 @@
   }
   75% {
     opacity: 0.75;
-    transform: translateX(2.5);
+    transform: translateX(2.5rem);
   }
   100% {
     opacity: 1;
@@ -117,7 +123,8 @@ a {
   justify-content: center;
   align-items: center;
 }
-.loaderContainer .loader {
+.loaderContainer .scaler {
+  animation: scalingLoader 3000ms forwards;
   background-color: #f6f6f6;
   border: solid 2px #353535;
   box-shadow: 0rem 0rem 5rem #353535;
@@ -128,7 +135,15 @@ a {
   margin-left: auto;
   margin-right: auto;
   z-index: 4;
-  animation: loader 3000ms forwards;
+}
+.loaderContainer .loader {
+  position: fixed;
+  width: 20rem;
+  height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 4;
+  animation: spin 3000ms forwards;
 }
 .loaderContainer .loader__in {
   animation: loader__in 3000ms both;
@@ -172,13 +187,13 @@ a {
 
 .bouton {
   background-image: linear-gradient(#9356DC, #FF79DA);
-  border-radius: 2rem;
   color: #FFFFFF;
-  padding: 0.8rem 1.2rem 0.8rem 1.2rem;
-  box-shadow: 0rem 0rem 0.5rem #9356DC;
   margin: auto;
   transition: opacity 500ms;
   position: relative;
+  border-radius: 2rem;
+  padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+  box-shadow: 0rem 0rem 0.5rem #9356DC;
 }
 .bouton:hover {
   opacity: 0.7;
@@ -193,11 +208,11 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: 2rem;
-  padding: 0.8rem 1.2rem 0.8rem 1.2rem;
-  box-shadow: 0rem 0.3rem 0.5rem #9356DC;
   transition: opacity 500ms;
   opacity: 0;
+  border-radius: 2rem;
+  padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+  box-shadow: 0rem 0rem 0.5rem #9356DC;
 }
 
 .picto { /* couleur des pictogrammes */
@@ -216,7 +231,6 @@ a {
   justify-content: center;
   background-color: #FFFFFF;
   padding: 0.8rem;
-  position: relative;
 }
 .header__logo {
   width: 10rem;
@@ -276,8 +290,7 @@ a {
   padding: 0.8rem;
 }
 .searchbar__icon {
-  margin-right: 0.5rem;
-  margin-left: 2rem;
+  margin: auto 0.5rem auto 2rem;
 }
 .searchbar__input {
   border: none;
@@ -442,6 +455,10 @@ a {
   right: 5%;
   opacity: 0;
   transition: opacity 1000ms;
+  color: transparent;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 .shopCard__imgdown:hover {
   opacity: 1;
@@ -526,14 +543,12 @@ a {
 }
 @media (min-width: 1024px) {
   .menu {
-    margin-left: 6rem;
-    margin-right: 6rem;
+    margin: auto 6rem;
   }
 }
 @media (min-width: 1400px) {
   .menu {
-    margin-left: 12rem;
-    margin-right: 12rem;
+    margin: auto 12rem;
   }
 }
 .menu__title {

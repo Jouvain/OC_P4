@@ -11,18 +11,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .loader{
+    .scaler{
+        animation: scalingLoader $anim__duration*6 forwards;
         background-color: $bg__color;
         border: solid 2px $bg_contrast__color;
         box-shadow: 0rem 0rem 5rem $bg_contrast__color;
         border-radius: 100rem;
-        position: fixed;
-        width: $loader__width;
-        height: $loader__height;
-        margin-left: auto;
-        margin-right: auto;
-        z-index: 4;
-        animation: loader $anim__duration*6 forwards;
+        @include loader;
+    }
+    .loader{
+        @include loader;
+        animation: spin $anim__duration*6 forwards;
         &__in{
             animation: loader__in $anim__duration*6 both;
             @for $i from 1 through 3{
@@ -49,16 +48,13 @@
     }
 }
 
-
 .bouton{
     background-image: $main__linear;
-    border-radius: 2rem;
     color: $clear__color;
-    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
-    box-shadow: 0rem 0rem 0.5rem $main__color;
     margin: auto;
     transition: opacity $anim__duration;
     position: relative;
+    @include bouton;
     &:hover{
         opacity:0.7;
         &::after{
@@ -72,11 +68,9 @@
         bottom: 0;
         left: 0;
         right: 0;
-        border-radius: 2rem;
-        padding: 0.8rem 1.2rem 0.8rem 1.2rem;
-        box-shadow: 0rem 0.3rem 0.5rem $main__color;
         transition: opacity $anim__duration;
         opacity: 0;
+        @include bouton;
     } 
 }
 
