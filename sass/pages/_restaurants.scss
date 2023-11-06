@@ -41,6 +41,9 @@
     &__imgdown{
         @include img--restaurant;
         opacity: 0;
+        color: transparent;
+        background-image: $main__linear;
+        background-clip: text;
         transition: opacity $anim__duration*2;
         &:hover{
             opacity: 1;
